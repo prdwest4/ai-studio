@@ -1,0 +1,145 @@
+AI STUDIO — UI/UX DASHBOARD AND ADMIN
+Version: 2.0
+
+============================================================
+1. UX PRINCIPLE
+============================================================
+
+The user asks for a product, not for a provider.
+
+Primary interaction:
+“امروز چه چیزی می‌خواهید بسازید؟”
+
+The interface should hide unnecessary technical complexity while exposing useful
+production progress.
+
+============================================================
+2. PRIMARY FLOW
+============================================================
+
+The dashboard reflects the same production formula:
+
+Idea
+→ Understanding
+→ Product Brief
+→ Planning
+→ Research
+→ Tool Discovery
+→ Tool Selection
+→ Workflow
+→ Production
+→ Editing
+→ QC
+→ Repair/Retry
+→ Final Product
+
+The user may see this as a compact progress timeline.
+
+============================================================
+3. PROJECT VIEW
+============================================================
+
+Each project should show:
+- original request
+- Product Brief
+- current stage
+- workflow steps
+- generated assets
+- selected tools
+- errors/retries
+- QC results
+- cost
+- final product
+
+============================================================
+4. STATUS LANGUAGE
+============================================================
+
+Use meaningful statuses:
+در حال درک درخواست
+در حال ساخت Product Brief
+در حال برنامه‌ریزی
+در حال تحقیق
+در حال یافتن ابزار
+در حال انتخاب ابزار
+در حال تولید
+در حال تدوین
+در حال کنترل کیفیت
+در حال تعمیر/تلاش مجدد
+آماده
+متوقف به تأیید کاربر
+خطا
+
+Avoid generic “Success” when the user needs to know what happened.
+
+============================================================
+5. FINAL PRODUCT
+============================================================
+
+The final result must provide:
+- real preview
+- real playback when applicable
+- download
+- product metadata
+- production summary
+
+If QC failed, do not present the artifact as final.
+
+============================================================
+6. ADMIN
+============================================================
+
+Admin is separate from the main production experience.
+
+Admin may manage:
+- providers
+- tools
+- models
+- credentials/configuration
+- health
+- costs
+- logs
+- prompt/library content
+- system settings
+
+Advanced admin is not an MVP blocker.
+
+============================================================
+7. PROMPT / CONTENT LIBRARY
+============================================================
+
+The library is an enhancement layer.
+It must not replace the main natural-language production flow.
+
+============================================================
+8. RESPONSIVE DESIGN
+============================================================
+
+The production status and final media must remain usable on desktop and mobile.
+
+============================================================
+9. UX SAFETY
+============================================================
+
+Do not show:
+- fake completion
+- fake preview
+- misleading download links
+- fabricated provider health
+
+Show the actual state and actionable failure information.
+
+============================================================
+10. FUTURE UI
+============================================================
+
+Future:
+- advanced gallery
+- series
+- continuity
+- prompt collector
+- collaboration
+- publishing
+- advanced analytics
+
+These are roadmap features.

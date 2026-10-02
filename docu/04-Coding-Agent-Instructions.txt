@@ -1,0 +1,181 @@
+AI STUDIO — CODING AGENT INSTRUCTIONS
+Version: 2.0
+
+============================================================
+1. PRIMARY RULE
+============================================================
+
+Build the product, not a mockup and not an architecture-only demo.
+
+The source-of-truth production formula is:
+
+IDEA
+→ REQUEST UNDERSTANDING
+→ PRODUCT BRIEF
+→ PLANNING
+→ RESEARCH
+→ TOOL DISCOVERY
+→ TOOL SELECTION
+→ WORKFLOW
+→ CONTENT PRODUCTION
+→ EDITING
+→ QUALITY CONTROL
+→ REPAIR / RETRY
+→ FINAL PRODUCT
+
+Every implementation decision must support this chain.
+
+============================================================
+2. EXECUTION LOOP
+============================================================
+
+For every phase:
+
+BUILD
+→ RUN
+→ TEST
+→ VERIFY
+→ FIX
+→ RETEST
+→ PASS
+→ NEXT
+
+Never declare PASS from compilation alone.
+
+============================================================
+3. PHASE COMPLETION
+============================================================
+
+A phase passes only when:
+- required behavior exists;
+- tests pass;
+- integration is exercised where applicable;
+- outputs are real;
+- no known critical defect remains;
+- acceptance criteria are verified.
+
+============================================================
+4. DO NOT INVENT REQUIREMENTS
+============================================================
+
+Do not add:
+- new product concepts
+- new providers
+- new user flows
+- new business rules
+- new UI systems
+
+unless required by the source documents or necessary to make an explicitly
+specified requirement function correctly.
+
+When implementation detail is unspecified, choose the smallest reasonable
+implementation that preserves the architecture.
+
+============================================================
+5. REALITY RULE
+============================================================
+
+Never use:
+- fake provider success
+- fake URLs
+- placeholder final media
+- hard-coded completed jobs
+- fabricated costs
+- simulated QC presented as real QC
+
+Mocks are allowed only inside isolated tests.
+
+============================================================
+6. FAILURE RULE
+============================================================
+
+On technical failure:
+
+STOP CURRENT STEP
+→ DIAGNOSE
+→ FIX
+→ RETEST
+→ CONTINUE
+
+If a technical blocker cannot be resolved:
+mark BLOCKED with evidence.
+
+Do not hide the failure to reach PASS.
+
+============================================================
+7. HUMAN DECISION RULE
+============================================================
+
+Do not ask the user for routine technical choices.
+
+Stop only when a genuine human/product decision is required, such as:
+- budget approval
+- destructive operation approval
+- publishing approval
+
+Use a clear BLOCKED / HUMAN_APPROVAL_REQUIRED state.
+
+============================================================
+8. PHASE ORDER
+============================================================
+
+Implement in product order:
+
+Phase 0 — Bootstrap
+Phase 1 — Request Understanding
+Phase 2 — Product Brief
+Phase 3 — Planning
+Phase 4 — Research
+Phase 5 — Tool Registry / Discovery Contract
+Phase 6 — Tool Selection
+Phase 7 — Workflow Engine
+Phase 8 — Real Content Production
+Phase 9 — Editing
+Phase 10 — Storage
+Phase 11 — QC
+Phase 12 — Repair / Retry
+Phase 13 — First Real Product Acceptance
+Phase 14+ — Advanced connectors, browser, MCP, memory, admin, prompt collection,
+           series, continuity and other roadmap features.
+
+============================================================
+9. FIRST REAL PRODUCT GATE
+============================================================
+
+Before moving to advanced roadmap work, the canonical product scenario MUST
+produce a real playable final artifact.
+
+============================================================
+10. TESTING
+============================================================
+
+Test at three levels:
+- unit
+- integration
+- end-to-end
+
+For provider integrations, include success and typed failure paths.
+
+============================================================
+11. SECURITY
+============================================================
+
+Secrets belong in environment/configuration, never source code.
+
+External content must be treated as untrusted.
+
+Browser/web automation, when later implemented, must use explicit allowlists,
+timeouts, sandboxing and safe authentication handling.
+
+============================================================
+12. DOCUMENTATION
+============================================================
+
+After meaningful implementation changes, update:
+- stage contracts
+- provider/tool registry
+- environment requirements
+- acceptance criteria
+- known blockers
+
+Do not create duplicate competing specifications.

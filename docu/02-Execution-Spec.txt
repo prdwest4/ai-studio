@@ -1,0 +1,313 @@
+AI STUDIO — EXECUTION SPECIFICATION
+Version: 2.0 — Formula-Driven Execution
+
+============================================================
+1. EXECUTION PIPELINE
+============================================================
+
+IDEA
+→ REQUEST UNDERSTANDING
+→ PRODUCT BRIEF
+→ PLANNING
+→ RESEARCH
+→ TOOL DISCOVERY
+→ TOOL SELECTION
+→ WORKFLOW
+→ CONTENT PRODUCTION
+→ EDITING
+→ QUALITY CONTROL
+→ REPAIR / RETRY
+→ FINAL PRODUCT
+
+The execution engine owns state transitions between these stages.
+
+============================================================
+2. STAGE CONTRACTS
+============================================================
+
+IDEA
+Input:
+- raw user request
+Output:
+- requestId
+- rawPrompt
+
+REQUEST UNDERSTANDING
+Input:
+- rawPrompt
+Output:
+- normalized requirements
+- constraints
+- missing/unknown fields
+- inferred production objectives
+
+PRODUCT BRIEF
+Input:
+- normalized requirements
+Output:
+- title
+- product type
+- audience
+- content requirements
+- visual/audio requirements
+- duration
+- aspect/resolution
+- language
+- references
+- acceptance criteria
+- budget/cost constraints
+
+PLANNING
+Input:
+- Product Brief
+Output:
+- ordered production plan
+- dependencies
+- optional/required steps
+- fallback policy
+- QC gates
+
+RESEARCH
+Input:
+- plan/research questions
+Output:
+- research findings
+- sources/evidence where applicable
+- research constraints
+
+TOOL DISCOVERY
+Input:
+- required capabilities
+Output:
+- candidate tools
+- capability matches
+- availability/authentication status
+- discovered metadata
+
+TOOL SELECTION
+Input:
+- candidates + policy
+Output:
+- selected tool/provider per step
+- fallback candidates
+- selection reason
+- estimated cost where available
+
+WORKFLOW
+Input:
+- plan + selected tools
+Output:
+- executable Job/Step graph
+- dependency edges
+- persisted state
+
+CONTENT PRODUCTION
+Input:
+- step prompt + references + selected adapter
+Output:
+- GenerationResult
+- Asset on success
+- typed error on failure
+
+EDITING
+Input:
+- generated assets
+Output:
+- edited intermediate/final media
+
+QUALITY CONTROL
+Input:
+- artifact + Product Brief acceptance criteria
+Output:
+- PASS or FAIL
+- structured findings
+
+REPAIR / RETRY
+Input:
+- failed step/QC findings
+Output:
+- repaired artifact, retry result, provider switch, or BLOCKED
+
+FINAL PRODUCT
+Input:
+- QC-passed artifact
+Output:
+- final stored asset
+- preview/download address
+- production report
+
+============================================================
+3. STATE MODEL
+============================================================
+
+Recommended project states:
+
+DRAFT
+UNDERSTANDING
+BRIEF_READY
+PLANNED
+RESEARCHING
+DISCOVERING_TOOLS
+SELECTING_TOOLS
+WORKFLOW_READY
+PRODUCING
+EDITING
+QC
+REPAIRING
+RETRYING
+COMPLETED
+FAILED
+BLOCKED
+
+A state must never imply success unless the corresponding artifact/state evidence
+exists.
+
+============================================================
+4. JOB/STEP RULES
+============================================================
+
+Each step must have:
+- id
+- projectId
+- type
+- status
+- inputs
+- outputs
+- selectedTool
+- attempts
+- dependencies
+- timestamps
+- error information
+- QC information when applicable
+
+Step outputs must be addressable by downstream steps.
+
+The engine must not mark a dependent step runnable until its required dependencies
+have valid outputs.
+
+============================================================
+5. GENERATION RESULT
+============================================================
+
+GenerationResult must distinguish:
+- success
+- failure
+
+On success:
+- provider
+- model/tool
+- assetId
+- storage location
+- mime type
+- dimensions where applicable
+- duration where applicable
+- metadata
+- cost when known
+
+On failure:
+- typed error code
+- provider
+- step
+- human-readable detail
+- retryability
+- raw provider detail where safe
+
+Failed results must not contain a fake final URL.
+
+============================================================
+6. STORAGE
+============================================================
+
+Database stores metadata and references.
+Actual binary media belongs in file/object storage.
+
+Minimum asset metadata:
+- assetId
+- projectId
+- type
+- mimeType
+- storagePath
+- dimensions
+- duration
+- size
+- sourceTool
+- status
+- createdAt
+
+A final URL must resolve to the actual stored file.
+
+============================================================
+7. QC GATES
+============================================================
+
+For video:
+- file exists
+- readable
+- playable
+- expected duration within allowed tolerance
+- expected dimensions/aspect ratio
+- expected video stream
+- audio stream when required
+- MIME/container validity
+- Product Brief requirements
+
+For image:
+- file exists
+- decodable
+- dimensions/aspect ratio
+- expected content checks where configured
+
+For audio:
+- file exists
+- decodable
+- duration
+- required format
+- expected sample properties where configured
+
+============================================================
+8. RETRY / REPAIR
+============================================================
+
+Failure handling:
+
+detect
+→ classify
+→ determine repairability
+→ repair OR retry
+→ optionally switch provider
+→ QC again
+→ complete or BLOCKED
+
+Retry policy must prevent infinite loops.
+Every attempt is recorded.
+
+============================================================
+9. HUMAN APPROVAL
+============================================================
+
+The system may act autonomously on technical decisions.
+
+It must stop for explicit product/business decisions such as:
+- exceeding a user-defined budget
+- destructive actions requiring confirmation
+- publication requiring approval
+
+Use:
+BLOCKED / HUMAN_APPROVAL_REQUIRED
+
+============================================================
+10. OBSERVABILITY
+============================================================
+
+Every stage should expose:
+- current status
+- start/end
+- duration
+- selected tool
+- attempts
+- errors
+- cost
+- resulting asset
+- next action
+
+The UI must show meaningful progress rather than only “success”.

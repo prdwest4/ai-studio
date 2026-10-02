@@ -1,0 +1,154 @@
+AI STUDIO — MVP DECISIONS
+Version: 2.0
+
+============================================================
+1. MVP NORTH STAR
+============================================================
+
+The MVP proves this exact chain:
+
+IDEA
+→ REQUEST UNDERSTANDING
+→ PRODUCT BRIEF
+→ PLANNING
+→ RESEARCH
+→ TOOL DISCOVERY
+→ TOOL SELECTION
+→ WORKFLOW
+→ CONTENT PRODUCTION
+→ EDITING
+→ QUALITY CONTROL
+→ REPAIR / RETRY
+→ FINAL PRODUCT
+
+The acceptance demonstration is a real short promotional video generated,
+edited, QC-validated and delivered as a playable final file.
+
+============================================================
+2. MVP SCOPE
+============================================================
+
+IN:
+- natural-language request
+- request understanding
+- Product Brief
+- planning
+- research module
+- curated Tool Registry
+- tool selection
+- workflow execution
+- real image generation
+- real video generation
+- optional voice/music when required
+- real editing
+- storage
+- QC
+- repair/retry
+- project/job history
+- cost/log tracking
+- final preview/download
+
+OUT OF MVP:
+- payment
+- advanced multi-user administration
+- open-web autonomous browser agent
+- full autonomous tool discovery
+- advanced memory
+- series/continuity
+- large-scale prompt scraping
+- social publishing
+- complex collaboration
+
+============================================================
+3. IMPORTANT SCOPE RULE
+============================================================
+
+The architecture must represent Research, Tool Discovery and Tool Selection as
+real stages.
+
+For MVP, Tool Discovery may operate from a controlled registry and configured
+providers. This is a valid implementation of the stage; it is not a removal of
+the stage.
+
+============================================================
+4. OPTIONAL PRODUCTION STEPS
+============================================================
+
+Voice, music, subtitles and other media are conditional.
+
+The planner decides whether each is:
+REQUIRED
+OPTIONAL
+NOT NEEDED
+
+The engine must not create unnecessary assets.
+
+============================================================
+5. FIRST REAL PRODUCT
+============================================================
+
+The first acceptance scenario:
+
+User:
+“برای فروشگاه لباس یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.”
+
+Expected:
+- brief
+- plan
+- research if needed
+- tool candidates
+- selected tools
+- storyboard/assets
+- video
+- optional voice/music according to brief
+- editing
+- QC
+- final playable MP4
+
+============================================================
+6. AUTHENTICATION
+============================================================
+
+MVP may run with a simple local/project access model.
+Complex public registration, organizations and billing are deferred unless
+required by the actual deployment.
+
+============================================================
+7. DATABASE
+============================================================
+
+SQLite is acceptable for MVP behind repository abstractions.
+The data model must allow later PostgreSQL migration.
+
+============================================================
+8. SUCCESS CRITERIA
+============================================================
+
+The MVP is successful only if the canonical scenario produces a real final
+artifact end-to-end without mock success.
+
+============================================================
+9. FAILURE CRITERIA
+============================================================
+
+The MVP is not considered complete if:
+- the final file is fake;
+- a success status exists without a real artifact;
+- provider output is not stored;
+- editing is simulated;
+- QC is simulated;
+- errors are swallowed;
+- failed output is presented as final.
+
+============================================================
+10. BUILD PRIORITY
+============================================================
+
+Always prioritize:
+1. real production path
+2. storage
+3. QC
+4. retry/repair
+5. observability
+6. UX refinement
+7. advanced autonomous features

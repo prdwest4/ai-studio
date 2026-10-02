@@ -1,0 +1,172 @@
+AI STUDIO — MVP TOOLS AND INTEGRATIONS
+Version: 2.0
+
+============================================================
+1. TOOL ROLE IN THE FORMULA
+============================================================
+
+Tools exist to execute the production formula:
+
+IDEA
+→ REQUEST UNDERSTANDING
+→ PRODUCT BRIEF
+→ PLANNING
+→ RESEARCH
+→ TOOL DISCOVERY
+→ TOOL SELECTION
+→ WORKFLOW
+→ CONTENT PRODUCTION
+→ EDITING
+→ QUALITY CONTROL
+→ REPAIR / RETRY
+→ FINAL PRODUCT
+
+A tool is not the product.
+A tool is an executable capability selected for a workflow step.
+
+============================================================
+2. TOOL REGISTRY
+============================================================
+
+Every registered tool should declare:
+
+- toolId
+- name
+- capability
+- input types
+- output types
+- supported formats
+- provider/model
+- authentication requirement
+- availability/health
+- cost information
+- limitations
+- adapter
+- retry behavior
+
+============================================================
+3. MVP CAPABILITIES
+============================================================
+
+Required:
+- image generation
+- video generation
+- media editing
+- storage
+- QC
+
+Conditional:
+- text generation
+- voice
+- music
+- subtitles
+
+Research may use configured web/search capability where available.
+
+============================================================
+4. DISCOVERY
+============================================================
+
+MVP discovery may search a curated registry.
+
+Future discovery may inspect:
+- APIs
+- public tool registries
+- MCP servers
+- approved web sources
+- local tools
+
+Discovery must not automatically install or trust arbitrary software.
+
+============================================================
+5. SELECTION
+============================================================
+
+Selection considers:
+1. capability match
+2. input/output compatibility
+3. availability
+4. authentication
+5. quality requirements
+6. cost/budget
+7. latency
+8. fallback availability
+
+The selection result must be persisted.
+
+============================================================
+6. PROVIDER ADAPTER CONTRACT
+============================================================
+
+Adapters translate the generic tool request into provider-specific calls.
+
+Generic workflow must not contain provider-specific API logic.
+
+Adapter output:
+GenerationResult / ToolResult
+
+Adapter failure:
+typed error with retryability and provider detail.
+
+============================================================
+7. VIDEO PATH
+============================================================
+
+The MVP video path should be real:
+
+brief
+→ visual assets
+→ video generation
+→ optional audio/voice
+→ FFmpeg or equivalent editing
+→ output file
+→ QC
+→ final MP4
+
+============================================================
+8. FALLBACK
+============================================================
+
+Fallback is allowed only when:
+- primary fails;
+- fallback supports the same required capability;
+- fallback is configured/authorized;
+- budget constraints permit it.
+
+Record:
+PRE_FAILOVER
+POST_FAILOVER
+selected provider
+reason
+attempt number
+
+============================================================
+9. TOOL HEALTH
+============================================================
+
+Health checks must not be confused with successful production.
+
+A provider can be:
+HEALTHY
+DEGRADED
+UNAVAILABLE
+AUTH_ERROR
+RATE_LIMITED
+OUT_OF_CREDIT
+UNKNOWN
+
+Production must verify the actual generation result.
+
+============================================================
+10. FUTURE CONNECTORS
+============================================================
+
+Architecture may later support:
+API
+CLI
+local software
+MCP
+browser/web automation
+file-based tools
+
+Do not implement all connector types before the first real product works.

@@ -1,0 +1,186 @@
+AI STUDIO — MASTER SPECIFICATION
+Version: 2.0 — Unified Production Formula
+
+============================================================
+1. PRODUCT DEFINITION
+============================================================
+
+AI Studio is a product-first content production system. The user describes the
+desired product in natural language. The system converts that request into a
+structured production plan, researches what is needed, discovers and selects
+appropriate tools, executes a workflow, produces assets, edits them, validates
+the result, repairs or retries failures, and delivers a real final product.
+
+The system is NOT a collection of disconnected AI tools.
+The product is the complete production pipeline.
+
+============================================================
+2. SOURCE-OF-TRUTH PRODUCTION FORMULA
+============================================================
+
+IDEA
+→ REQUEST UNDERSTANDING
+→ PRODUCT BRIEF
+→ PLANNING
+→ RESEARCH
+→ TOOL DISCOVERY
+→ TOOL SELECTION
+→ WORKFLOW
+→ CONTENT PRODUCTION
+→ EDITING
+→ QUALITY CONTROL
+→ REPAIR / RETRY
+→ FINAL PRODUCT
+
+Every production request MUST move through these stages in this logical order.
+
+1. IDEA
+   The user's natural-language intent.
+
+2. REQUEST UNDERSTANDING
+   Extract objective, audience, subject, style, duration, format, language,
+   constraints, references, budget and explicit requirements.
+
+3. PRODUCT BRIEF
+   Convert understanding into a structured, reviewable product specification.
+
+4. PLANNING
+   Decide what must be produced, in what order, with which dependencies,
+   acceptance criteria and fallback paths.
+
+5. RESEARCH
+   Gather factual, creative, technical or market context required by the plan.
+
+6. TOOL DISCOVERY
+   Identify tools/providers capable of satisfying each required production step.
+   Discovery must respect configured sources and access rules.
+
+7. TOOL SELECTION
+   Select an actually usable tool based on capability, availability, quality,
+   cost, constraints and fallback policy.
+
+8. WORKFLOW
+   Materialize the plan as executable dependent steps. Outputs of earlier steps
+   become inputs to later steps.
+
+9. CONTENT PRODUCTION
+   Generate the required image, video, audio, voice, text or other assets.
+
+10. EDITING
+    Assemble and transform produced assets into the requested product.
+
+11. QUALITY CONTROL
+    Validate both technical integrity and requested product requirements.
+
+12. REPAIR / RETRY
+    Diagnose failures, repair when possible, retry the failed step or switch
+    provider according to policy. Never report success for an invalid artifact.
+
+13. FINAL PRODUCT
+    Deliver a real, stored, verifiable and usable artifact.
+
+============================================================
+3. CORE PRINCIPLES
+============================================================
+
+- Product first, provider second.
+- No fake success.
+- No placeholder final products in the real production path.
+- Every completed generation must produce a verifiable GenerationResult/Asset.
+- Every final product must pass QC.
+- Provider-specific code belongs behind adapters.
+- The workflow is dependency-aware; steps are not blindly parallelized.
+- Optional steps are included only when the Product Brief requires them.
+- Unknown cost or capability must be represented as unknown, never invented.
+- Technical failures are diagnosed and retried; product-level decisions requiring
+  human approval must stop as BLOCKED/HUMAN_APPROVAL_REQUIRED.
+- The system must preserve traceability from user request to final artifact.
+
+============================================================
+4. MVP DEFINITION
+============================================================
+
+The MVP must prove the complete formula with at least one real product path.
+The canonical acceptance product is a real short promotional video (for example,
+a ~20-second advertising video), including real generation, editing, QC and a
+playable final file.
+
+MVP may use a curated Tool Registry instead of autonomous global tool discovery.
+However, the architecture MUST preserve the Tool Discovery and Tool Selection
+stages as first-class stages so they can become more autonomous later.
+
+MVP does not require:
+- public payment
+- complex multi-user administration
+- autonomous browser discovery across the open web
+- a fully autonomous MCP ecosystem
+- advanced long-term memory
+- series/continuity systems
+- a full prompt-scraping platform
+
+These are extensions, not reasons to weaken the core formula.
+
+============================================================
+5. DEFINITION OF DONE
+============================================================
+
+A production request is DONE only when:
+- the request was understood and recorded;
+- a Product Brief exists;
+- a plan exists;
+- required research is recorded;
+- tool discovery/selection decisions are traceable;
+- workflow steps completed or were explicitly skipped as optional;
+- generated assets are stored and addressable;
+- editing completed;
+- QC passed;
+- any failures were repaired/retried or explicitly marked blocked;
+- the final artifact exists as a real file;
+- the final artifact is playable/usable and matches the requested type;
+- the user can preview/download the final product.
+
+A database row with status=success is NOT proof of completion.
+
+============================================================
+6. NON-GOALS
+============================================================
+
+Do not add features merely because they are technically interesting.
+Do not allow future roadmap work to block the first real end-to-end product.
+
+============================================================
+7. TRACEABILITY
+============================================================
+
+Every project must be traceable:
+
+idea/request
+→ understanding
+→ product brief
+→ plan
+→ research
+→ discovered tools
+→ selected tools
+→ workflow steps
+→ generated assets
+→ edits
+→ QC results
+→ repair/retry history
+→ final asset.
+
+============================================================
+8. EXTENSIBILITY
+============================================================
+
+The architecture must support future:
+- automatic tool discovery
+- API/Web/CLI/MCP/browser connectors
+- advanced research
+- memory
+- series and continuity
+- multi-user accounts
+- admin operations
+- prompt collection
+- publishing integrations
+
+None of these may compromise the core production formula.

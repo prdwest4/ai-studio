@@ -1,0 +1,188 @@
+AI STUDIO — START CODING AGENT
+Version: 2.0
+
+============================================================
+MISSION
+============================================================
+
+Build the real AI Studio product according to the seven source documents.
+
+The governing production formula is:
+
+IDEA
+→ REQUEST UNDERSTANDING
+→ PRODUCT BRIEF
+→ PLANNING
+→ RESEARCH
+→ TOOL DISCOVERY
+→ TOOL SELECTION
+→ WORKFLOW
+→ CONTENT PRODUCTION
+→ EDITING
+→ QUALITY CONTROL
+→ REPAIR / RETRY
+→ FINAL PRODUCT
+
+The ultimate acceptance target is a real, playable final content product.
+
+============================================================
+RULE 1 — SOURCE OF TRUTH
+============================================================
+
+Read all seven documents before changing architecture or implementation.
+
+Do not reinterpret the product as a collection of unrelated AI tools.
+
+============================================================
+RULE 2 — START WITH THE CORE
+============================================================
+
+Begin with:
+1. repository/bootstrap verification
+2. request understanding contract
+3. Product Brief
+4. planning
+5. research contract
+6. Tool Registry / Discovery contract
+7. Tool Selection
+8. Workflow
+9. real production
+10. editing
+11. storage
+12. QC
+13. retry/repair
+14. final product
+
+============================================================
+RULE 3 — REAL OUTPUT
+============================================================
+
+The first major acceptance gate is:
+
+A real user request
+→ real production
+→ real editing
+→ real QC
+→ real final artifact.
+
+Do not proceed to large roadmap features if this path is not working.
+
+============================================================
+RULE 4 — BUILD/TEST LOOP
+============================================================
+
+For each implementation unit:
+
+BUILD
+RUN
+TEST
+VERIFY
+FIX
+RETEST
+PASS
+
+Only then continue.
+
+============================================================
+RULE 5 — NO FAKE SUCCESS
+============================================================
+
+Never:
+- fabricate provider output
+- fabricate asset URLs
+- mark failed jobs as successful
+- bypass QC
+- substitute placeholders for final content
+- invent costs
+
+============================================================
+RULE 6 — BLOCKERS
+============================================================
+
+If blocked:
+- identify exact failing stage
+- preserve logs/evidence
+- do not silently bypass it
+- mark the project/phase BLOCKED if necessary
+
+If a human business decision is required, use:
+HUMAN_APPROVAL_REQUIRED
+
+============================================================
+RULE 7 — SCOPE
+============================================================
+
+Do not allow:
+Browser automation
+MCP ecosystem
+advanced memory
+autonomous open-web discovery
+series/continuity
+advanced admin
+prompt scraping
+publishing
+payment
+
+to block the first real end-to-end production path.
+
+They may be designed for later phases.
+
+============================================================
+RULE 8 — OPTIONAL STEPS
+============================================================
+
+Do not force voice, music, subtitles or other media into every workflow.
+
+The Product Brief and planner determine whether they are required.
+
+============================================================
+RULE 9 — FINAL ACCEPTANCE
+============================================================
+
+The canonical acceptance example is:
+
+“برای فروشگاه لباس یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.”
+
+The system must be able to show the chain:
+
+request
+→ brief
+→ plan
+→ research
+→ tool discovery
+→ tool selection
+→ workflow
+→ production
+→ editing
+→ QC
+→ repair/retry if required
+→ final playable MP4.
+
+============================================================
+RULE 10 — NEXT PHASE
+============================================================
+
+After a phase passes, continue to the next phase automatically unless:
+- the phase is explicitly marked as a human approval gate;
+- a real blocker exists;
+- the project acceptance criteria require human review.
+
+Do not stop after every phase merely to ask permission.
+
+============================================================
+FINAL COMMAND
+============================================================
+
+Start by inspecting the existing repository and mapping it to the seven documents.
+
+Do not rebuild the application from scratch without evidence.
+
+Preserve working components.
+
+Implement the smallest complete vertical slice of the formula first.
+
+The goal is not:
+“many features implemented.”
+
+The goal is:
+“a real product produced successfully from a natural-language request.”
