@@ -1,0 +1,327 @@
+# AI STUDIO — CODING AGENT INSTRUCTIONS
+
+1. Mission
+
+---
+
+ساخت یک Product Creation Engine واقعی از صفر تا محصول نهایی.
+
+اصل اصلی:
+
+PRODUCT FIRST
+
+کاربر محصول می‌خواهد، نه Model.
+
+2. Non-Negotiable Rules
+
+---
+
+1. Mock نباید جای قابلیت اصلی را بگیرد.
+
+2. هر Phase باید:
+
+BUILD
+RUN
+TEST
+VERIFY
+FIX
+PASS
+
+شود.
+
+3. قبل از PASS شدن Phase فعلی، Phase بعدی شروع نشود.
+
+4. Provider و Model نباید داخل Business Logic Hard-code شوند.
+
+5. API تنها روش اتصال نیست.
+
+6. اقدامات حساس نیازمند Human Approval هستند.
+
+7. CAPTCHA، Login، Paywall، Rate Limit یا Security نباید دور زده شوند.
+
+8. هر Integration واقعی باید با تست واقعی Validation شود.
+
+9. Stack
+
+---
+
+Frontend:
+
+React
+TypeScript
+Vite
+Tailwind
+React Router
+
+Backend:
+
+Node.js
+Express
+TypeScript
+
+Database:
+
+SQLite
+
+Media:
+
+FFmpeg یا ابزار مناسب
+
+4. Structure
+
+---
+
+src/
+domain/
+orders/
+briefs/
+assets/
+workflows/
+tools/
+providers/
+storage/
+jobs/
+logging/
+quality/
+memory/
+agents/
+config/
+tests/
+
+5. Phases
+
+---
+
+Phase 0 — Bootstrap
+
+Phase 1 — Project & Order
+
+Phase 2 — Product Brief
+
+Phase 3 — Main Agent
+
+Phase 4 — Tool Interface
+
+Phase 5 — Tool Registry
+
+Phase 6 — Tool Discovery
+
+Phase 7 — Research Agent
+
+Phase 8 — Tool Router
+
+Phase 9 — API Connector
+
+Phase 10 — Web / Browser Connector
+
+Phase 11 — Memory
+
+Phase 12 — Workflow Engine
+
+Phase 13 — Asset Manager
+
+Phase 14 — Image Pipeline
+
+Phase 15 — Video Pipeline
+
+Phase 16 — Audio / Voice
+
+Phase 17 — Editing
+
+Phase 18 — Quality Control
+
+Phase 19 — Retry / Repair
+
+Phase 20 — Cost Manager
+
+Phase 21 — First Real Product
+
+Phase 22 — Product Templates
+
+Phase 23 — Long-form
+
+Phase 24 — Series / Course
+
+Phase 25 — Continuity Engine
+
+Phase 26 — Human Approval
+
+Phase 27 — Admin
+
+Phase 28 — Reliability
+
+Phase 29 — Security
+
+Phase 30 — Observability
+
+Phase 31 — UX
+
+Phase 32 — Final Autonomous Product Test
+
+6. First Real Product
+
+---
+
+Input:
+
+«برای فروشگاه لباس یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.»
+
+Output:
+
+یک MP4 واقعی و قابل پخش ۲۰ ثانیه‌ای.
+
+باید شامل:
+
+* Workflow
+* Logs
+* Cost
+* QC
+* Final Output
+
+باشد.
+
+7. Phase Report
+
+---
+
+پس از هر Phase این گزارش ارائه شود:
+
+PHASE:
+STATUS:
+
+Implemented:
+
+Files Created/Modified:
+
+Tests:
+
+Build:
+
+Runtime:
+
+Integration:
+
+Acceptance Criteria:
+
+Known Issues:
+
+Next Phase:
+
+8. Failure
+
+---
+
+در صورت Failure:
+
+STOP
+→ Diagnose
+→ Fix
+→ Retest
+
+اگر مشکل حل نشد:
+
+BLOCKED
+
+9. Definition of Done
+
+---
+
+Code
++
+Build Pass
++
+Tests Pass
++
+Runtime Pass
++
+Acceptance Pass
++
+No Critical Error
++
+Documentation Updated
+
+10. Start Instruction
+
+---
+
+فقط Phase 0 را شروع کن.
+
+Repository را بررسی کن.
+
+Project را ایجاد یا کامل کن.
+
+Build را اجرا کن.
+
+Basic Tests را اجرا کن.
+
+Runtime را بررسی کن.
+
+پس از PASS شدن Phase 0 متوقف شو.
+
+Phase 1 را شروع نکن.
+
+گزارش Phase 0 را طبق قالب بالا ارائه کن.
+
+11. Final Objective
+
+---
+
+Idea
+→ Understanding
+→ Planning
+→ Discovery
+→ Selection
+→ Execution
+→ Production
+→ Editing
+→ QC
+→ Repair
+→ Delivery
+
+
+## AUTONOMOUS CODING AGENT OPERATING RULES — MANDATORY
+
+این بخش جزء سند و الزام اجرایی پروژه است.
+
+1. این ۷ سند در مجموع یک Source of Truth واحد هستند. Agent باید قبل از هر Phase هر ۷ سند را کامل بخواند و آن‌ها را با وضعیت واقعی Repository تطبیق دهد.
+
+2. Agent نباید برای تصمیم‌های اجرایی معمول، جزئیات پیاده‌سازی، ترتیب کار، تست، Build، Runtime، رفع خطا یا عبور از Phaseها از کاربر سؤال کند.
+
+3. Agent نباید Requirement، قابلیت محصول، Contract، Schema، API، Architecture یا Acceptance Criterion جدیدی از خودش اختراع کند.
+
+4. اگر مسئولیت یک Phase در یک سند به‌تنهایی کامل توضیح داده نشده باشد، Agent باید اطلاعات صریح همان Phase را از مجموع هر ۷ سند و ترتیب رسمی Phaseها استخراج کند. این کار تفسیر اسناد موجود است، نه افزودن Requirement جدید.
+
+5. اگر برای یک تصمیم صرفاً فنی و داخلی چند روش ممکن وجود داشته باشد، Agent باید کم‌خطرترین و کم‌پیچیدگی‌ترین روش سازگار با اسناد را خودش انتخاب کند و از کاربر سؤال نکند؛ مشروط بر اینکه قرارداد محصول یا Scope اسناد تغییر نکند.
+
+6. Agent فقط در این موارد مجاز به توقف و اعلام BLOCKED است:
+   - قابلیت اصلی به Integration واقعی نیاز دارد ولی Integration واقعی در محیط موجود نیست.
+   - یک Requirement صریح و متناقض در اسناد وجود دارد که بدون تصمیم انسانی قابل رفع نیست.
+   - Human Approval طبق اسناد الزام شده است.
+   - محدودیت امنیتی یا قانونی مانع اجرای مجاز کار است.
+   - خطا پس از Diagnose → Fix → Retest همچنان حل نشده است.
+
+7. در موارد بالا Agent نباید حدس بزند، Requirement جدید بسازد یا از کاربر بخواهد چیزی را طراحی کند؛ فقط BLOCKED و علت دقیق را گزارش کند.
+
+8. پس از PASS شدن یک Phase، Agent باید بلافاصله Phase بعدی را طبق ترتیب رسمی شروع کند. توقف بین Phaseها برای گرفتن تأیید کاربر ممنوع است.
+
+9. Agent باید چرخه زیر را برای هر Phase به‌صورت خودکار انجام دهد:
+
+BUILD → RUN → TEST → VERIFY → FIX → PASS → NEXT PHASE
+
+10. اگر Phase شکست خورد:
+
+STOP → DIAGNOSE → FIX → RETEST
+
+و فقط در صورت حل‌نشدن، BLOCKED شود.
+
+11. Agent نباید به دلیل تمام‌شدن یک پاسخ، Session، پیام یا مرحله، اجرای پروژه را عمداً متوقف کند. معیار توقف فقط قواعد همین سند است.
+
+12. قبل از شروع هر Phase، Agent باید وضعیت Phase قبلی، Commit فعلی، Working Tree و Acceptance Criteria مربوط به Phase را بررسی کند.
+
+13. هیچ Phase بعدی نباید زودتر اجرا شود و هیچ Phase قبلی نباید دوباره‌کاری شود، مگر اینکه برای رفع Failure یا تکمیل Acceptance همان Phase لازم باشد.
+
+14. پس از PASS هر Phase، Commit ایجاد و به branch اصلی Repository push شود؛ سپس Phase بعدی از همان وضعیت واقعی Repository ادامه پیدا کند.
+
+15. گزارش هر Phase باید پس از PASS یا BLOCKED شدن همان Phase ثبت شود و شامل وضعیت واقعی Build، Test، Runtime، Integration و Acceptance باشد.
+
+16. این قواعد برای جلوگیری از پرسش‌های غیرضروری، Scope Drift، اختراع Requirement و توقف دستی Agent ایجاد شده‌اند و در تمام Phaseها لازم‌الاجرا هستند.

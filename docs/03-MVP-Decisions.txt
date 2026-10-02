@@ -1,0 +1,235 @@
+# AI STUDIO — MVP DECISIONS
+
+1. MVP Goal
+
+---
+
+اولین محصول واقعی MVP:
+
+ساخت تیزر تبلیغاتی ۲۰ ثانیه‌ای.
+
+سناریوی اصلی:
+
+«برای فروشگاه لباس یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.»
+
+2. MVP User
+
+---
+
+MVP در ابتدا برای:
+
+* Small Business Owner
+* Content Creator
+* Internal Operator
+
+طراحی می‌شود.
+
+در MVP اولیه نیازی به سیستم پیچیده Multi-user یا Payment عمومی نیست.
+
+3. Provider
+
+---
+
+در هر Capability:
+
+* یک Provider اصلی
+* یک Provider جایگزین در صورت نیاز
+
+کافی است.
+
+اما معماری باید برای اضافه‌کردن ابزارهای بیشتر آماده باشد.
+
+4. Real Integration
+
+---
+
+هیچ قابلیت اصلی نباید با Mock جایگزین شود.
+
+هر Integration واقعی باید با اجرای واقعی تست شود.
+
+5. Commercial Use
+
+---
+
+قبل از اتصال واقعی هر ابزار باید بررسی شود:
+
+* API Availability
+* Usage Limits
+* Pricing
+* Commercial Terms
+* Authentication Requirements
+
+6. Cost Control
+
+---
+
+هر Run باید سقف هزینه داشته باشد.
+
+اگر هزینه احتمالی از سقف عبور کند:
+
+STOP
+
+یا:
+
+ASK FOR APPROVAL
+
+7. Storage
+
+---
+
+MVP:
+
+SQLite
+
+اما Repository Layer باید امکان مهاجرت به PostgreSQL را فراهم کند.
+
+8. Jobs
+
+---
+
+MVP:
+
+Internal Runner
+
+معماری باید در آینده امکان:
+
+Queue / Worker
+
+را داشته باشد.
+
+9. First Real Execution
+
+---
+
+اولین اجرای واقعی باید شامل موارد زیر باشد:
+
+* Product Brief
+* Asset Management
+* Workflow
+* Logs
+* Job Status
+* Cost
+* QC
+* Playable Output
+
+10. Dev / Test / Prod
+
+---
+
+محیط‌های زیر از هم جدا باشند:
+
+Development
+Test
+Production
+
+11. Acceptance Scenario
+
+---
+
+یک سفارش واقعی از ابتدا تا انتها:
+
+Registration
+→ Product Brief
+→ Production
+→ QC
+→ Status
+→ Manual Delivery
+
+12. Sprint 1
+
+---
+
+Sprint 1 شامل:
+
+* Base Project
+* Environment
+* Internal Order Registration
+* Product Brief
+* Asset Management
+* Logs
+* Job Status
+* Status Output
+* Unit Tests
+* Integration Tests
+* Workflow Interface
+* Provider Interface
+
+13. Repository Modules
+
+---
+
+domain
+orders
+briefs
+assets
+workflows
+providers
+storage
+jobs
+logging
+tests
+config
+
+14. تصمیم نهایی
+
+---
+
+ابتدا:
+
+Phase 0
+
+سپس:
+
+Sprint 1
+
+و بعد از PASS شدن هر مرحله، مرحله بعدی شروع شود.
+
+سند اضافی برای توضیح MVP لازم نیست.
+
+
+## AUTONOMOUS CODING AGENT OPERATING RULES — MANDATORY
+
+این بخش جزء سند و الزام اجرایی پروژه است.
+
+1. این ۷ سند در مجموع یک Source of Truth واحد هستند. Agent باید قبل از هر Phase هر ۷ سند را کامل بخواند و آن‌ها را با وضعیت واقعی Repository تطبیق دهد.
+
+2. Agent نباید برای تصمیم‌های اجرایی معمول، جزئیات پیاده‌سازی، ترتیب کار، تست، Build، Runtime، رفع خطا یا عبور از Phaseها از کاربر سؤال کند.
+
+3. Agent نباید Requirement، قابلیت محصول، Contract، Schema، API، Architecture یا Acceptance Criterion جدیدی از خودش اختراع کند.
+
+4. اگر مسئولیت یک Phase در یک سند به‌تنهایی کامل توضیح داده نشده باشد، Agent باید اطلاعات صریح همان Phase را از مجموع هر ۷ سند و ترتیب رسمی Phaseها استخراج کند. این کار تفسیر اسناد موجود است، نه افزودن Requirement جدید.
+
+5. اگر برای یک تصمیم صرفاً فنی و داخلی چند روش ممکن وجود داشته باشد، Agent باید کم‌خطرترین و کم‌پیچیدگی‌ترین روش سازگار با اسناد را خودش انتخاب کند و از کاربر سؤال نکند؛ مشروط بر اینکه قرارداد محصول یا Scope اسناد تغییر نکند.
+
+6. Agent فقط در این موارد مجاز به توقف و اعلام BLOCKED است:
+   - قابلیت اصلی به Integration واقعی نیاز دارد ولی Integration واقعی در محیط موجود نیست.
+   - یک Requirement صریح و متناقض در اسناد وجود دارد که بدون تصمیم انسانی قابل رفع نیست.
+   - Human Approval طبق اسناد الزام شده است.
+   - محدودیت امنیتی یا قانونی مانع اجرای مجاز کار است.
+   - خطا پس از Diagnose → Fix → Retest همچنان حل نشده است.
+
+7. در موارد بالا Agent نباید حدس بزند، Requirement جدید بسازد یا از کاربر بخواهد چیزی را طراحی کند؛ فقط BLOCKED و علت دقیق را گزارش کند.
+
+8. پس از PASS شدن یک Phase، Agent باید بلافاصله Phase بعدی را طبق ترتیب رسمی شروع کند. توقف بین Phaseها برای گرفتن تأیید کاربر ممنوع است.
+
+9. Agent باید چرخه زیر را برای هر Phase به‌صورت خودکار انجام دهد:
+
+BUILD → RUN → TEST → VERIFY → FIX → PASS → NEXT PHASE
+
+10. اگر Phase شکست خورد:
+
+STOP → DIAGNOSE → FIX → RETEST
+
+و فقط در صورت حل‌نشدن، BLOCKED شود.
+
+11. Agent نباید به دلیل تمام‌شدن یک پاسخ، Session، پیام یا مرحله، اجرای پروژه را عمداً متوقف کند. معیار توقف فقط قواعد همین سند است.
+
+12. قبل از شروع هر Phase، Agent باید وضعیت Phase قبلی، Commit فعلی، Working Tree و Acceptance Criteria مربوط به Phase را بررسی کند.
+
+13. هیچ Phase بعدی نباید زودتر اجرا شود و هیچ Phase قبلی نباید دوباره‌کاری شود، مگر اینکه برای رفع Failure یا تکمیل Acceptance همان Phase لازم باشد.
+
+14. پس از PASS هر Phase، Commit ایجاد و به branch اصلی Repository push شود؛ سپس Phase بعدی از همان وضعیت واقعی Repository ادامه پیدا کند.
+
+15. گزارش هر Phase باید پس از PASS یا BLOCKED شدن همان Phase ثبت شود و شامل وضعیت واقعی Build، Test، Runtime، Integration و Acceptance باشد.
+
+16. این قواعد برای جلوگیری از پرسش‌های غیرضروری، Scope Drift، اختراع Requirement و توقف دستی Agent ایجاد شده‌اند و در تمام Phaseها لازم‌الاجرا هستند.

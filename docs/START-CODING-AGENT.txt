@@ -1,0 +1,486 @@
+# AI STUDIO — CODING AGENT START
+
+این پروژه را بر اساس اسناد زیر بساز:
+
+01-Master-Spec.txt
+
+02-Execution-Spec.txt
+
+03-MVP-Decisions.txt
+
+04-Coding-Agent-Instructions.txt
+
+05-MVP-Tools.txt
+
+06-UI-UX-Dashboard-Admin.txt
+
+1. Mission
+
+---
+
+هدف ساخت یک AI Studio واقعی است که محصول تولید کند.
+
+اصل اصلی:
+
+PRODUCT FIRST
+
+کاربر نباید مجبور باشد Model، Provider یا API را انتخاب کند.
+
+سیستم باید در پشت صحنه ابزار مناسب را پیدا و استفاده کند.
+
+2. Previous Project Reference
+
+---
+
+پروژه قبلی «دستورات» یکی از مراجع طراحی و معماری است.
+
+از ایده‌های مناسب آن استفاده شود:
+
+* Home / Chat
+* Gallery
+* Library
+* Auto-first
+* Smart Router
+
+اما پروژه جدید نباید صرفاً کپی «دستورات» باشد.
+
+AI Studio جدید باید Product Creation Engine کامل‌تری داشته باشد.
+
+3. UI
+
+---
+
+رابط کاربری:
+
+* فارسی
+* RTL
+* Modern
+* Premium
+* Professional
+* Clean
+
+و از طراحی قبلی «دستورات» و الگوهای مناسب Creative AI Studioها الهام بگیرد.
+
+Dashboard باید حول سؤال زیر طراحی شود:
+
+«امروز چه چیزی می‌خواهید بسازید؟»
+
+4. Core Principle
+
+---
+
+Model و Provider هدف پروژه نیستند.
+
+Product هدف است.
+
+Tool می‌تواند:
+
+* API
+* Web
+* Browser
+* Local Software
+* CLI
+* MCP
+* File-based
+
+باشد.
+
+5. MVP
+
+---
+
+اولین سناریوی واقعی:
+
+«برای فروشگاه لباس یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.»
+
+هدف:
+
+Real Playable MP4
+
+6. No Mock
+
+---
+
+Mock نباید قابلیت اصلی را جایگزین کند.
+
+اگر Integration واقعی وجود ندارد، آن قابلیت باید:
+
+BLOCKED
+
+گزارش شود.
+
+7. Tool Discovery
+
+---
+
+سیستم باید در مراحل بعدی بتواند ابزارهای مناسب را پیدا و بررسی کند.
+
+اطلاعات مهم:
+
+* Capability
+* Connection Method
+* Pricing
+* Limits
+* Commercial Use
+* Reliability
+* Availability
+
+8. Prompt Library
+
+---
+
+Prompt Library باید با Gallery ارتباط داشته باشد.
+
+مثال:
+
+Wedding-IMG-001
+
+↕
+
+Wedding-PROMPT-001
+
+کاربر بتواند:
+
+Gallery
+
+↓
+
+Select
+
+↓
+
+Prompt
+
+↓
+
+Customize
+
+↓
+
+Generate
+
+9. Prompt Collector
+
+---
+
+Admin باید ابزار جمع‌آوری Prompt داشته باشد.
+
+فرآیند:
+
+Search
+
+↓
+
+Discover
+
+↓
+
+Extract
+
+↓
+
+Clean
+
+↓
+
+Classify
+
+↓
+
+Duplicate Check
+
+↓
+
+Human Approval
+
+↓
+
+Library
+
+10. Projects
+
+---
+
+هر کاربر پروژه‌های خصوصی خودش را داشته باشد.
+
+پروژه شامل:
+
+* Request
+* Brief
+* Assets
+* Prompts
+* Versions
+* Workflow
+* Final Output
+
+11. Admin
+
+---
+
+Admin باید بتواند:
+
+* Gallery
+* Prompt Library
+* Categories
+* Prompt Collector
+* Projects
+* Tools
+* Jobs
+* Costs
+* Logs
+* Settings
+
+را مدیریت کند.
+
+12. Security
+
+---
+
+هیچ‌گونه:
+
+* CAPTCHA Bypass
+* Login Bypass
+* Paywall Bypass
+* Rate Limit Bypass
+* Security Bypass
+
+پیاده‌سازی نشود.
+
+13. Human Approval
+
+---
+
+برای اقدامات حساس تأیید انسان لازم است.
+
+14. Cost
+
+---
+
+Run Cost باید کنترل و ثبت شود.
+
+در صورت عبور از سقف:
+
+STOP
+
+یا:
+
+ASK FOR APPROVAL
+
+15. Development Method
+
+---
+
+هر Phase:
+
+BUILD
+
+↓
+
+RUN
+
+↓
+
+TEST
+
+↓
+
+VERIFY
+
+↓
+
+FIX
+
+↓
+
+PASS
+
+تا زمانی که Phase فعلی PASS نشده است، Phase بعدی را شروع نکن.
+
+16. Phase 0 — START NOW
+
+---
+
+فقط Phase 0 را اجرا کن.
+
+کارهای Phase 0:
+
+1. Repository را بررسی کن.
+2. Environment را بررسی کن.
+3. Project structure را ایجاد یا کامل کن.
+4. Frontend را بررسی کن.
+5. Backend را بررسی کن.
+6. Database foundation را بررسی کن.
+7. Build را اجرا کن.
+8. Basic tests را اجرا کن.
+9. Runtime را بررسی کن.
+10. مشکلات اولیه را اصلاح کن.
+
+بعد از اتمام Phase 0:
+
+متوقف شو.
+
+Phase 1 را شروع نکن.
+
+17. Phase Report
+
+---
+
+گزارش را دقیقاً با ساختار زیر بده:
+
+PHASE:
+
+STATUS:
+
+Implemented:
+
+Files Created/Modified:
+
+Tests:
+
+Build:
+
+Runtime:
+
+Integration:
+
+Acceptance Criteria:
+
+Known Issues:
+
+Next Phase:
+
+18. Failure Rule
+
+---
+
+در صورت خطا:
+
+STOP
+
+↓
+
+Diagnose
+
+↓
+
+Fix
+
+↓
+
+Retest
+
+اگر مشکل حل نشد:
+
+BLOCKED
+
+19. Definition of Done
+
+---
+
+Phase زمانی PASS است که:
+
+* Code complete
+* Build pass
+* Tests pass
+* Runtime pass
+* Acceptance pass
+* No critical error
+* Documentation updated
+
+20. Final Goal
+
+---
+
+هدف نهایی:
+
+IDEA
+
+↓
+
+UNDERSTANDING
+
+↓
+
+PLANNING
+
+↓
+
+DISCOVERY
+
+↓
+
+TOOL SELECTION
+
+↓
+
+EXECUTION
+
+↓
+
+PRODUCTION
+
+↓
+
+EDITING
+
+↓
+
+QUALITY CONTROL
+
+↓
+
+REPAIR
+
+↓
+
+DELIVERY
+
+در نهایت کاربر باید بتواند فقط ایده خود را بیان کند و AI Studio محصول واقعی تولید کند.
+
+
+## AUTONOMOUS CODING AGENT OPERATING RULES — MANDATORY
+
+این بخش جزء سند و الزام اجرایی پروژه است.
+
+1. این ۷ سند در مجموع یک Source of Truth واحد هستند. Agent باید قبل از هر Phase هر ۷ سند را کامل بخواند و آن‌ها را با وضعیت واقعی Repository تطبیق دهد.
+
+2. Agent نباید برای تصمیم‌های اجرایی معمول، جزئیات پیاده‌سازی، ترتیب کار، تست، Build، Runtime، رفع خطا یا عبور از Phaseها از کاربر سؤال کند.
+
+3. Agent نباید Requirement، قابلیت محصول، Contract، Schema، API، Architecture یا Acceptance Criterion جدیدی از خودش اختراع کند.
+
+4. اگر مسئولیت یک Phase در یک سند به‌تنهایی کامل توضیح داده نشده باشد، Agent باید اطلاعات صریح همان Phase را از مجموع هر ۷ سند و ترتیب رسمی Phaseها استخراج کند. این کار تفسیر اسناد موجود است، نه افزودن Requirement جدید.
+
+5. اگر برای یک تصمیم صرفاً فنی و داخلی چند روش ممکن وجود داشته باشد، Agent باید کم‌خطرترین و کم‌پیچیدگی‌ترین روش سازگار با اسناد را خودش انتخاب کند و از کاربر سؤال نکند؛ مشروط بر اینکه قرارداد محصول یا Scope اسناد تغییر نکند.
+
+6. Agent فقط در این موارد مجاز به توقف و اعلام BLOCKED است:
+   - قابلیت اصلی به Integration واقعی نیاز دارد ولی Integration واقعی در محیط موجود نیست.
+   - یک Requirement صریح و متناقض در اسناد وجود دارد که بدون تصمیم انسانی قابل رفع نیست.
+   - Human Approval طبق اسناد الزام شده است.
+   - محدودیت امنیتی یا قانونی مانع اجرای مجاز کار است.
+   - خطا پس از Diagnose → Fix → Retest همچنان حل نشده است.
+
+7. در موارد بالا Agent نباید حدس بزند، Requirement جدید بسازد یا از کاربر بخواهد چیزی را طراحی کند؛ فقط BLOCKED و علت دقیق را گزارش کند.
+
+8. پس از PASS شدن یک Phase، Agent باید بلافاصله Phase بعدی را طبق ترتیب رسمی شروع کند. توقف بین Phaseها برای گرفتن تأیید کاربر ممنوع است.
+
+9. Agent باید چرخه زیر را برای هر Phase به‌صورت خودکار انجام دهد:
+
+BUILD → RUN → TEST → VERIFY → FIX → PASS → NEXT PHASE
+
+10. اگر Phase شکست خورد:
+
+STOP → DIAGNOSE → FIX → RETEST
+
+و فقط در صورت حل‌نشدن، BLOCKED شود.
+
+11. Agent نباید به دلیل تمام‌شدن یک پاسخ، Session، پیام یا مرحله، اجرای پروژه را عمداً متوقف کند. معیار توقف فقط قواعد همین سند است.
+
+12. قبل از شروع هر Phase، Agent باید وضعیت Phase قبلی، Commit فعلی، Working Tree و Acceptance Criteria مربوط به Phase را بررسی کند.
+
+13. هیچ Phase بعدی نباید زودتر اجرا شود و هیچ Phase قبلی نباید دوباره‌کاری شود، مگر اینکه برای رفع Failure یا تکمیل Acceptance همان Phase لازم باشد.
+
+14. پس از PASS هر Phase، Commit ایجاد و به branch اصلی Repository push شود؛ سپس Phase بعدی از همان وضعیت واقعی Repository ادامه پیدا کند.
+
+15. گزارش هر Phase باید پس از PASS یا BLOCKED شدن همان Phase ثبت شود و شامل وضعیت واقعی Build، Test، Runtime، Integration و Acceptance باشد.
+
+16. این قواعد برای جلوگیری از پرسش‌های غیرضروری، Scope Drift، اختراع Requirement و توقف دستی Agent ایجاد شده‌اند و در تمام Phaseها لازم‌الاجرا هستند.
