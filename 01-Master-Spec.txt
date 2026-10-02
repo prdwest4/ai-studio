@@ -1,0 +1,284 @@
+# AI STUDIO — MASTER SPECIFICATION
+
+نسخه: MVP / Product Creation Engine
+
+1. هدف اصلی
+
+---
+
+هدف پروژه ساخت یک پلتفرم واقعی AI Studio است که کاربر در آن به جای انتخاب مدل، Provider یا ابزار، فقط محصول موردنظر خود را توضیح دهد.
+
+نمونه:
+
+«برای فروشگاه لباس من یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.»
+
+سیستم باید بتواند:
+
+* درخواست کاربر را بفهمد.
+* Product Brief ایجاد کند.
+* کار را به مراحل لازم تقسیم کند.
+* ابزارهای مناسب را پیدا کند.
+* ابزار مناسب را انتخاب کند.
+* محتوا تولید کند.
+* خروجی‌ها را مدیریت کند.
+* ویدئو و صدا را ترکیب و تدوین کند.
+* کیفیت خروجی را بررسی کند.
+* در صورت خطا Retry یا Repair انجام دهد.
+* خروجی نهایی را تحویل دهد.
+
+اصل اصلی:
+
+PRODUCT FIRST
+
+محصول هدف است؛
+Model، Provider، API، Website، Browser، Software و Local Tool فقط ابزار هستند.
+
+2. استقلال از Model و Provider
+
+---
+
+سیستم نباید به یک Model یا Provider خاص وابسته باشد.
+
+کاربر نباید مجبور باشد:
+
+* Model انتخاب کند.
+* Provider انتخاب کند.
+* Model ID بداند.
+* Endpoint بداند.
+* Adapter فنی انتخاب کند.
+
+سیستم باید در پشت صحنه بهترین ابزار در دسترس را برای کار موردنظر پیدا و انتخاب کند.
+
+3. API تنها روش اتصال نیست
+
+---
+
+ابزارها می‌توانند از روش‌های مختلف متصل شوند:
+
+* API
+* Web API
+* Browser
+* Local CLI
+* Local Software
+* File-based Tool
+* MCP / Agent Tool
+
+ابزار لازم نیست حتماً API داشته باشد.
+
+هدف استفاده از هر ابزار قانونی و قابل اتکایی است که بتواند بخشی از محصول را تولید کند.
+
+4. Product Creation Engine
+
+---
+
+معماری اصلی:
+
+User Request
+↓
+Understanding
+↓
+Product Brief
+↓
+Planning
+↓
+Research
+↓
+Tool Discovery
+↓
+Tool Selection
+↓
+Workflow
+↓
+Production
+↓
+Editing
+↓
+Quality Control
+↓
+Repair / Retry
+↓
+Final Product
+
+5. قابلیت‌های آینده
+
+---
+
+سیستم باید در معماری قابلیت پشتیبانی از موارد زیر را داشته باشد:
+
+* Text
+* Image
+* Video
+* Voice
+* Audio
+* Music
+* SFX
+* Editing
+* Subtitles
+* Presentations
+* Advertising
+* Social Media Content
+* Long-form Content
+* Series / Course
+* Product Templates
+
+6. MVP
+
+---
+
+MVP باید ابتدا فقط یک مسیر End-to-End واقعی داشته باشد.
+
+سناریوی اصلی:
+
+«برای فروشگاه لباس یک تیزر تبلیغاتی ۲۰ ثانیه‌ای بساز.»
+
+سیستم باید واقعاً:
+
+* Brief بسازد.
+* برنامه تولید ایجاد کند.
+* ابزارهای لازم را پیدا کند.
+* Asset تولید کند.
+* Video تولید کند.
+* Voice/Music در صورت نیاز ایجاد کند.
+* Media را تدوین کند.
+* QC انجام دهد.
+* خروجی واقعی MP4 تحویل دهد.
+
+Mock نباید جای قابلیت اصلی را بگیرد.
+
+7. ابزارهای اصلی
+
+---
+
+سیستم باید Tool Registry داشته باشد.
+
+هر ابزار باید اطلاعاتی مانند موارد زیر داشته باشد:
+
+* id
+* name
+* category
+* capabilities
+* connectionMethods
+* inputs
+* outputs
+* authentication
+* pricing
+* limits
+* commercialUse
+* reliability
+* status
+
+8. Agent Architecture
+
+---
+
+اجزای اصلی:
+
+* Main Agent
+* Research Agent
+* Tool Discovery
+* Tool Router
+* Workflow Engine
+* Memory
+* Quality Control
+* Retry / Repair
+* Cost Manager
+
+9. امنیت
+
+---
+
+سیستم نباید:
+
+* CAPTCHA را دور بزند.
+* Login را دور بزند.
+* Paywall را دور بزند.
+* Rate Limit را دور بزند.
+* Security Control را دور بزند.
+
+اقدامات حساس باید در صورت نیاز با تأیید انسان انجام شوند.
+
+10. مدیریت هزینه
+
+---
+
+برای هر اجرای واقعی باید هزینه کنترل شود.
+
+سیستم باید بتواند:
+
+* هزینه تخمینی را محاسبه کند.
+* هزینه واقعی را ثبت کند.
+* سقف هزینه داشته باشد.
+* در صورت عبور از سقف، اجرا را متوقف کند یا تأیید کاربر بگیرد.
+
+11. Storage
+
+---
+
+MVP از SQLite استفاده کند.
+
+Storage باید با Repository/Abstraction طراحی شود تا در آینده امکان مهاجرت به PostgreSQL وجود داشته باشد.
+
+12. Media
+
+---
+
+برای عملیات داخلی Media از FFmpeg یا ابزار مناسب استفاده شود.
+
+سیستم باید بتواند:
+
+* Trim
+* Concat
+* Resize
+* Crop
+* Add Audio
+* Add Voice
+* Add Music
+* Add Text
+* Add Subtitle
+* Transitions
+* Export
+
+را انجام دهد.
+
+13. Quality Control
+
+---
+
+خروجی باید بررسی شود:
+
+* File Exists
+* Playable
+* Duration
+* Resolution
+* Aspect Ratio
+* Audio Stream
+* Video Stream
+* Content Check
+
+14. زبان
+
+---
+
+زبان اصلی رابط کاربری:
+
+فارسی
+
+زبان دوم:
+
+English
+
+RTL و LTR باید از ابتدا در معماری در نظر گرفته شوند.
+
+15. اصل نهایی
+
+---
+
+کاربر نباید با تکنولوژی درگیر شود.
+
+کاربر باید بگوید:
+
+«چه چیزی می‌خواهم؟»
+
+و AI Studio پاسخ دهد:
+
+«محصول آماده است.»
